@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Gallery</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/home.css">
+</head>
+
+<body>
+
+    <!-- container -->
+    <div class="container d-flex flex-column text-capitalize">
+
+        <!-- navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5 rounded-bottom sticky-top shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">Car Gallery</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/contact">Contact Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input id="search-input" class="form-control me-2 " type="search"
+                            placeholder="Press / to Search " aria-label="Search">
+                        <button id="search-button" class="btn btn-outline-success">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- sort users -->
+        <select name="select" id="select-box" class=" align-self-start rounded bg-dark text-white mb-2">
+            <option value="">Sort</option>
+            <option value="">Latest</option>
+            <option value="id">Id</option>
+            <option value="first_name">First Name</option>
+            <option value="last_name">Last Name</option>
+            <option value="email">Email</option>
+        </select>
+
+        <!-- main -->
+        <main class="row">
+        </main>
+
+        <!-- add new button -->
+        <div class="new-user d-flex justify-content-end">
+            <button id="add-user-button" type="button" class="btn btn-dark btn-add" data-bs-toggle="modal"
+                data-bs-target="#more-info-modal">
+                Add New Employee
+            </button>
+        </div>
+        <!-- modal -->
+        <div class="modal fade" id="more-info-modal" tabindex="-1" aria-labelledby="moreInfoModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark shadow-lg">
+                    <div class="modal-header ">
+                        <h5 class="modal-title text-capitalize" id="exampleModalLabel">informations of employee </h5>
+                        <button type="button" class="btn btn-lg text-white fs-5 " data-bs-dismiss="modal"
+                            aria-label="Close">X</button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button id="update-user" type="button" class="btn btn-warning">Update</button>
+                        <button id="delete-user" type="button" class="btn btn-danger"
+                            data-bs-dismiss="modal">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- pagination -->
+        <div class="row ">
+            <nav aria-label="..." class="d-flex justify-content-center">
+                <ul id="pagination" class="pagination pagination-sm">
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>
