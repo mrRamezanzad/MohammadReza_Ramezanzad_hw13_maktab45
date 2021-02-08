@@ -1,7 +1,5 @@
-const express = require("express")
-
-
-let path = require("path"),
+const express = require("express"),
+    path = require("path"),
     user = require(path.join(__dirname, "routes/user.js"))
 
 app = express()
@@ -15,7 +13,6 @@ app.get("/", (req, res) => {
 app.use("/user", user)
 
 app.get("*", (req, res) => {
-    console.log("request here");
     res.send("404 Not Found")
 })
 

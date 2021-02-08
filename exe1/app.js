@@ -1,7 +1,7 @@
 app = require("express")()
 
 app.get("*", (req, res) =>{
-    console.log("request here");
+    console.log("Requested : ", req.url)
     res.send("Hello World")
 })
 

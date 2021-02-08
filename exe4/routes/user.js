@@ -4,15 +4,15 @@ const express = require("express"),
     path = require("path")
 
 router.get("/", (req, res) => {
-    res.send("users page")
+    res.redirect("/")
 })
 
 router.post("/getUser", (req, res) => {
-    fs.readFile(path.join(__dirname, "../Db/informations.json"), "utf8", (err, file) =>{
-        console.log(file);
-        let users = JSON.parse(file).users
-        ,user = users.find(el => el.userName === req.body.userName)
-       typeof user === "undefined" ? res.send("کاربری با این مشخصات وجود ندارد"): res.json(user)
+    fs.readFile(path.join(__dirname, "../Db/informations.json"), "utf8", (err, file) => {
+        // console.log(file);
+        let users = JSON.parse(file).users,
+            user = users.find(el => el.userName === req.body.userName)
+        typeof user === "undefined" ? res.send("کاربری با این مشخصات وجود ندارد") : res.json(user)
     })
 
 })
