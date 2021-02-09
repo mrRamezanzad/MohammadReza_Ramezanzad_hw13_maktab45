@@ -1,9 +1,54 @@
-<%- include(`./partials/header`) %> 
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- container -->
-<div class="container d-flex flex-column text-capitalize">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Gallery</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/dist/home.css"> -->
+    <link rel="stylesheet" href="/dist/car.css">
+</head>
 
-<%= carId %> 
-</div>
+<body>
+    <!-- container -->
+    <div class="car-details position-relative  text-capitalize">
+        <div class="go-back position-absolute "><a href="/">×</a></div>
+        <% if (car) { %>
+            <img class="position-absolute" src="<%=car.images[0].big %> " alt="car-image">
+            <div class="details-box position-absolute d-flex flex-column justify-content-center align-content-center">
+                <div class="details-content ">
+                    <p class="specs-title text-dark fs-3 text-center">
+                        Specifications
+                    </p>
+                    <div class="container">
+                        <p class="text-white fs-5">
+                            Id: <span class="specs">
+                                <%= car.id %>
+                            </span>
+                        </p>
+                        <p class="text-white fs-5">
+                            Name: <span class="specs">
+                                <%= car.name %>
+                            </span>
+                        </p>
+                        <p class="text-white fs-5">
+                            Brand: <span class="specs">
+                                <%= car.brand %>
+                            </span>
+                        </p>
+                        <p class="text-white fs-5">
+                            Year: <span class="specs">
+                                <%= car.modelYear %>
+                            </span>
+                        </p>
+                    </div>
+                </div>
 
-<%- include(`./partials/footer`) %> 
+                <p></p>
+            </div>
+            <% } %>
+
+    </div>
+
+    <%- include(`./partials/footer`) %>

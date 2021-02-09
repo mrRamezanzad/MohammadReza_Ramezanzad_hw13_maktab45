@@ -1,0 +1,57 @@
+a {
+  text-decoration: none;
+  color: red;
+  padding: 10px;
+}
+a:hover {
+  color: white;
+  text-shadow: 0 0px 200px red;
+}
+
+.car-details {
+  height: 100vh;
+  color: red;
+}
+.car-details .go-back {
+  font-size: 2em;
+  border-radius: 5px;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+.car-details img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.car-details .details-box {
+  right: 10px;
+  width: 400px;
+  height: 100%;
+}
+.car-details .details-box .details-content {
+  height: auto;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.car-details .details-box .details-content:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 15px #c20303;
+  transition: ease 100ms;
+}
+.car-details .details-box .details-content:hover p {
+  color: white !important;
+}
+.car-details .details-box .details-content:hover .specs {
+  color: honeydew;
+}
+.car-details .details-box .details-content:hover .specs-title {
+  color: #c20303 !important;
+}
+.car-details .details-box .details-content span.specs {
+  font-size: 1.2rem;
+  font-weight: 100;
+  color: white;
+}

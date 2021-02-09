@@ -3,9 +3,8 @@ const express = require("express"),
     path = require("path")
 
 router.get("/:carId?", (req, res) => {
-    res.render(path.join(__dirname, "../views/car"), {carId: req.params.carId})
-    console.log(req.params.carId);
+    let car = req.DB.find(el => el.id === req.params.carId)
+    car ? res.render(path.join(__dirname, "../views/car"), {      car: car    }): res.redirect("/404")
 })
-
 
 module.exports = router
