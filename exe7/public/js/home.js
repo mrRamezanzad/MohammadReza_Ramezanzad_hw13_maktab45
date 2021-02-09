@@ -12,50 +12,50 @@ var main = $("main"),
 
 let currentPage,
     sortBy = "id",
-    // users,
-    users = [{
-        id: 1,
-        "first_name": "ali",
-        "last_name": "ahmadi",
-        "email": "aliahmadi@gmail.com",
-        "avatar": "assets/user1.jpg"
-    }, {
-        id: 2,
-        "first_name": "saeed",
-        "last_name": "tehran",
-        "email": "saeedstone@gmail.com",
-        "avatar": "assets/user2.jpg"
-    }, {
-        id: 3,
-        "first_name": "saman",
-        "last_name": "ashari",
-        "email": "sameasghari@gmail.com",
-        "avatar": "assets/user6.jpg"
-    }, {
-        id: 4,
-        "first_name": "yusef",
-        "last_name": "najat",
-        "email": "imyusef@gmail.com",
-        "avatar": "assets/user3.jpg"
-    }, {
-        id: 5,
-        "first_name": "sami",
-        "last_name": "beigi",
-        "email": "avamusicsamibeigi@gmail.com",
-        "avatar": "assets/user4.jpg"
-    }, {
-        id: 6,
-        "first_name": "sami",
-        "last_name": "beigi",
-        "email": "avamusicsamibeigi@gmail.com",
-        "avatar": "assets/user6.jpg"
-    }, {
-        id: 7,
-        "first_name": "sami",
-        "last_name": "beigi",
-        "email": "avamusicsamibeigi@gmail.com",
-        "avatar": "assets/user7.png"
-    }, ],
+    users,
+    // users = [{
+    //     id: 1,
+    //     "first_name": "ali",
+    //     "last_name": "ahmadi",
+    //     "email": "aliahmadi@gmail.com",
+    //     "avatar": "assets/user1.jpg"
+    // }, {
+    //     id: 2,
+    //     "first_name": "saeed",
+    //     "last_name": "tehran",
+    //     "email": "saeedstone@gmail.com",
+    //     "avatar": "assets/user2.jpg"
+    // }, {
+    //     id: 3,
+    //     "first_name": "saman",
+    //     "last_name": "ashari",
+    //     "email": "sameasghari@gmail.com",
+    //     "avatar": "assets/user6.jpg"
+    // }, {
+    //     id: 4,
+    //     "first_name": "yusef",
+    //     "last_name": "najat",
+    //     "email": "imyusef@gmail.com",
+    //     "avatar": "assets/user3.jpg"
+    // }, {
+    //     id: 5,
+    //     "first_name": "sami",
+    //     "last_name": "beigi",
+    //     "email": "avamusicsamibeigi@gmail.com",
+    //     "avatar": "assets/user4.jpg"
+    // }, {
+    //     id: 6,
+    //     "first_name": "sami",
+    //     "last_name": "beigi",
+    //     "email": "avamusicsamibeigi@gmail.com",
+    //     "avatar": "assets/user6.jpg"
+    // }, {
+    //     id: 7,
+    //     "first_name": "sami",
+    //     "last_name": "beigi",
+    //     "email": "avamusicsamibeigi@gmail.com",
+    //     "avatar": "assets/user7.png"
+    // }, ],
     targetUser,
     userId
 
@@ -120,7 +120,7 @@ function showUsers(users, currentPage = 1, sort = sortBy) {
             <div class="card-body">
             <p class="card-text fw-bold">id: <span id="id">${user.id}</span></p>
             <p class="card-text">email: <span id="email">${user.email}</span></p>
-            <a user-id="${user.id}" data-bs-toggle="modal" data-bs-target="#more-info-modal" class="btn btn-dark main--cards--card--card-body--more-info">more info</a>
+            <a user-id="${user.id}" data-bs-toggle="modal" href="/cars/${user.id}" class="btn btn-dark main--cards--card--card-body--more-info">more info</a>
             </div>
             </div>
             </div>
@@ -235,7 +235,7 @@ $(".modal").on("click", "#save-new", function (e) {
 
 //Read click handler
 main.on("click", "a.btn", function (e) {
-    e.preventDefault()
+    // e.preventDefault()
 
     //find the target user 
     userId = $(this).attr("user-id") - ""
@@ -416,12 +416,4 @@ $(window).on("scroll", function(e){
         console.log($(".navbar").text())
     }
 })
-
-
-
-// //================================ getting image by file =============
-
-// var createImagePath = URL.createObjectURL(inputs[4].files[0], {
-// autoRevoke: false,
-// })
 

@@ -1,8 +1,10 @@
-const express = require("express")
-, router = express.Router()
+const express = require("express"),
+    router = express.Router(),
+    path = require("path")
 
-router.get("/", (req, res) =>{
-    res.send("cars page")
+router.get("/:carId?", (req, res) => {
+    res.render(path.join(__dirname, "../views/car"), {carId: req.params.carId})
+    console.log(req.params.carId);
 })
 
 

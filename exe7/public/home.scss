@@ -1,7 +1,21 @@
+// body{
+//     background: #f0f0f0;
+// }
 nav.scroll .navbar-brand {
-    color: #BB467F;
-    font-weight: 500;
-    // height: green;
+    color: #BB467F!important;
+    text-shadow: 0 8PX 8PX  #BB467F;
+}
+
+.navbar-brand {
+    color: #BB467F!important;
+    font-family: Cursive;
+    font-weight: 100;
+    margin-top: -15px;
+    vertical-align: text-top;
+    text-shadow: 0 8PX 8PX  #BB467F;
+    &:first-letter {
+        font-size: 2.5rem;
+    }
 }
 
 .card {

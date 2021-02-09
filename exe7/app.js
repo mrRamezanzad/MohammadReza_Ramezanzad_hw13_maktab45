@@ -6,6 +6,7 @@ const express = require("express"),
 
 app = express()
 
+app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "/public")));
 app.use(bodyParser.urlencoded({
     extended: true
@@ -16,7 +17,7 @@ app.use("/", pages)
 app.use("/cars", cars)
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/404.html"))
+    res.render(path.join(__dirname, "/views/404"))
 })
 
 app.listen(80, () => {
